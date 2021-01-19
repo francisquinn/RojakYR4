@@ -2,7 +2,6 @@ package com.example.recorddemo
 
 import android.Manifest
 import android.content.pm.PackageManager
-import android.media.MediaRecorder
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -15,10 +14,6 @@ import java.io.IOException
 
 
 class MainActivity : AppCompatActivity() {
-
-
-
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
