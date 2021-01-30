@@ -23,12 +23,12 @@
         android:layout_width="177dp"
         android:layout_height="136dp"
         android:layout_marginBottom="68dp"
-        android:src="@drawable/logo_test"
+        android:src="@drawable/logo"
         app:layout_constraintBottom_toTopOf="@+id/Stop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/logo_test"
-        tools:srcCompat="@drawable/logo_test" />
+        app:srcCompat="@drawable/logo"
+        tools:srcCompat="@drawable/logo" />
 
     <Button
         android:id="@+id/Stats"

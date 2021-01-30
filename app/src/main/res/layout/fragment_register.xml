@@ -5,7 +5,7 @@
     android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegisterFragment">
+    tools:context=".activity.RegisterFragment">
 
 
     <ImageView
@@ -15,105 +15,97 @@
         android:layout_marginTop="60dp"
         android:contentDescription="@string/logo_img"
         android:src="@drawable/logo"
-        app:layout_constraintBottom_toTopOf="@+id/editTextName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <EditText
-        android:id="@+id/editTextName"
-        style="@style/modifiedEditText"
-        android:layout_width="350dp"
+        android:id="@+id/edt_name"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="60dp"
-        android:autofillHints=""
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/et_custom"
         android:hint="@string/register_name"
         android:inputType="textPersonName"
         android:maxLines="1"
-        android:textSize="12sp"
+        android:padding="15dp"
+        android:selectAllOnFocus="true"
+        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <EditText
-        android:id="@+id/editTextEmail"
-        style="@style/modifiedEditText"
-        android:layout_width="350dp"
+        android:id="@+id/edt_email"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/et_custom"
         android:hint="@string/login_email_hint"
         android:inputType="textEmailAddress"
         android:maxLines="1"
-        android:textSize="12sp"
+        android:padding="15dp"
+        android:selectAllOnFocus="true"
+        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextName" />
+        app:layout_constraintTop_toBottomOf="@+id/edt_name" />
 
     <EditText
-        android:id="@+id/editTextMobile"
-        style="@style/modifiedEditText"
-        android:layout_width="350dp"
+        android:id="@+id/edt_password"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:hint="@string/mobile_number"
-        android:inputType="phone"
-        android:maxLines="1"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextEmail" />
-
-    <EditText
-        android:id="@+id/editTextPassword"
-        style="@style/modifiedEditText"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/et_custom"
         android:hint="@string/login_password_hint"
         android:inputType="textPassword"
         android:maxLines="1"
-        android:textSize="12sp"
+        android:padding="15dp"
+        android:selectAllOnFocus="true"
+        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextMobile" />
+        app:layout_constraintTop_toBottomOf="@+id/edt_email" />
 
     <Button
-        android:id="@+id/cirRegisterButton"
-        style="@style/loginButton"
-        android:layout_width="200dp"
+        android:id="@+id/btn_register"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="24dp"
+        android:layout_gravity="start"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/btn_custom"
+        android:fontFamily="@font/roboto_regular"
+        android:onClick="onClick"
         android:text="@string/register_button"
+        android:textColor="@android:color/white"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/edt_password" />
 
     <TextView
-        android:layout_width="0dp"
+        android:id="@+id/goLogin"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="100dp"
-        android:clickable="true"
-        android:onClick="onLoginClick"
+        android:layout_marginBottom="8dp"
+        android:onClick="onClick"
+        android:focusable="true"
         android:text="@string/have_account"
         android:textAlignment="center"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cirRegisterButton"
-        app:layout_constraintVertical_bias="0.0"
-        tools:ignore="OnClick"
-        android:focusable="true" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
