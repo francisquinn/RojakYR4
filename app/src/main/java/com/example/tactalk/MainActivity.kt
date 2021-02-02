@@ -4,31 +4,26 @@ package com.example.tactalk
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
+import androidx.navigation.Navigation
 import com.example.tactalk.activity.LoginFragment
 import com.example.tactalk.activity.RegisterFragment
+import kotlinx.android.synthetic.main.activity_main.*
 
 
-class MainActivity : AppCompatActivity(), View.OnClickListener {
+
+class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.fragment_app_start_page)
+        setContentView(R.layout.activity_main)
+
+
 
     }
 
-    override fun onClick(v: View) {
-        when(v.id){
-            R.id.btn_login_page -> {
-                // go to login page
-                startActivity(Intent(this, LoginFragment::class.java))
-            }
-            R.id.btn_register_page -> {
-                //go to register page
-                startActivity(Intent(this, RegisterFragment::class.java))
-            }
-        }
+
 
     }
-
-}

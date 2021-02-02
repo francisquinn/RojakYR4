@@ -41,7 +41,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/btn_custom"
         android:fontFamily="@font/roboto_regular"
-        android:onClick="onClick"
+
         android:text="SIGN IN"
         android:textColor="@android:color/white"
         android:textSize="16sp"
@@ -58,7 +58,7 @@
         android:layout_marginTop="16dp"
         android:background="@drawable/btn_custom"
         android:fontFamily="@font/roboto_regular"
-        android:onClick="onClick"
+
         android:text="SIGN UP"
         android:textColor="@android:color/white"
         android:textSize="16sp"
@@ -66,5 +66,17 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_login_page" />
+
+    <Button
+        android:id="@+id/GoMainMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="29dp"
+        android:layout_marginBottom="40dp"
+        android:text="Test"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_register_page" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

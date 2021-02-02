@@ -3,16 +3,22 @@ package com.example.tactalk.activity
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.Navigation
+import com.example.tactalk.MainActivity
 import com.example.tactalk.R
 import com.example.tactalk.network.TacTalkAPI
 import com.example.tactalk.network.RetrofitClient
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
+
 import kotlinx.android.synthetic.main.fragment_login.*
+import kotlinx.android.synthetic.main.fragment_login.view.*
 
 class LoginFragment : AppCompatActivity() {
 
@@ -23,6 +29,7 @@ class LoginFragment : AppCompatActivity() {
         compositeDisposable.clear();
         super.onStop()
     }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,6 +46,7 @@ class LoginFragment : AppCompatActivity() {
             R.id.btn_login -> {
                 // go to login page
                 loginUser(edt_email.text.toString(), edt_password.text.toString())
+                startActivity(Intent(this, MainActivity::class.java))
             }
             R.id.goRegister -> {
                 // go to login page

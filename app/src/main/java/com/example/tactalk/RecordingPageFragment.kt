@@ -5,6 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
+import kotlinx.android.synthetic.main.fragment_main_menu.view.*
+import kotlinx.android.synthetic.main.fragment_recording_page.view.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -29,10 +32,21 @@ class RecordingPageFragment : Fragment() {
         }
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+            inflater: LayoutInflater, container: ViewGroup?,
+            savedInstanceState: Bundle?
+    ): View? {
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_recording_page, container, false)
+        val view = inflater.inflate(R.layout.fragment_recording_page, container, false)
+
+        view.Stats.setOnClickListener{ Navigation.findNavController(view).navigate(R.id.RecordToStat)}
+
+        view.Stop.setOnClickListener{ Navigation.findNavController(view).navigate(R.id.RecordToEnd)}
+
+
+
+        return view
     }
 
     companion object {
