@@ -5,6 +5,7 @@
     android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#202C74"
     tools:context=".activity.RegisterFragment">
 
 
@@ -17,7 +18,8 @@
         android:src="@drawable/logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@drawable/white_logo" />
 
     <EditText
         android:id="@+id/edt_name"
@@ -81,12 +83,13 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="44dp"
         android:layout_marginEnd="16dp"
-        android:background="@drawable/btn_custom"
+        android:background="#2AC87B"
         android:fontFamily="@font/roboto_regular"
         android:onClick="onClick"
         android:text="@string/register_button"
         android:textColor="@android:color/white"
         android:textSize="16sp"
+        app:backgroundTint="#2AC87B"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"

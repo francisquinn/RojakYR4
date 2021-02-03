@@ -18,7 +18,7 @@
     <string name="FirstHalf">1st Half</string>
     <string name="TeamA">Team A 0 - 00</string>
     <string name="TeamB">Team B 0 - 00</string>
-    <string name="TeamAwinning">Team A 2-6</string>
+    <string name="TeamAwinning">Team A 2 - 26</string>
     <string name="EndHalf">End Half</string>
 
     <!-- Strings related to login -->
@@ -33,7 +33,7 @@
     <string name="login_password_hint">Password</string>
     <string name="project_name">TacTalk</string>
     <string name="manage_team">Manage Team</string>
-    <string name="set_up_match">Set up match</string>
+    <string name="set_up_matchs">Set up match</string>
     <string name="logo_img">logo</string>
     <string name="register_name">Name</string>
     <string name="mobile_number">Mobile Number</string>
@@ -49,5 +49,9 @@
     <string name="match_date">dd/mm/yy</string>
     <string name="match_opposition">Opposition</string>
     <string name="match_location">Location</string>
+    <string name="Set_Up_Match">SETUP MATCH</string>
+    <string name="ManageTeam">MANAGE TEAM</string>
+    <string name="Record">Record</string>
+    <string name="Match_Over">MATCH OVER</string>
 
 </resources>

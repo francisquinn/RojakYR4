@@ -34,7 +34,10 @@
             app:destination="@id/endGameFragment" />
         <action
             android:id="@+id/RecordToStat"
-            app:destination="@id/statsFragment" />
+            app:destination="@id/statsFragment"
+            app:enterAnim="@anim/md_styled_slide_up_normal"
+            app:exitAnim="@anim/md_styled_slide_down_normal"
+            app:popUpTo="@id/recordingPageFragment" />
     </fragment>
     <fragment
         android:id="@+id/statsFragment"
@@ -42,11 +45,10 @@
         android:label="fragment_stats"
         tools:layout="@layout/fragment_stats" >
         <action
-            android:id="@+id/action_statsFragment_to_endGameFragment"
-            app:destination="@id/endGameFragment" />
-        <action
             android:id="@+id/StatToSecondHalf"
-            app:destination="@id/recordingPageFragment" />
+            app:destination="@id/recordingPageFragment"
+            app:enterAnim="@anim/md_styled_slide_up_normal"
+            app:exitAnim="@anim/md_styled_slide_down_normal" />
     </fragment>
     <fragment
         android:id="@+id/setUpMatchFragment"
@@ -66,7 +68,9 @@
             app:destination="@id/mainMenuFragment" />
         <action
             android:id="@+id/EndToStats"
-            app:destination="@id/statsFragment" />
+            app:destination="@id/statsFragment"
+            app:enterAnim="@anim/md_styled_slide_up_normal"
+            app:exitAnim="@anim/md_styled_slide_down_normal" />
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
@@ -74,13 +78,21 @@
         android:label="HomeFragment" >
         <action
             android:id="@+id/HomeToMain"
-            app:destination="@id/mainMenuFragment" />
+            app:destination="@id/mainMenuFragment"
+            app:enterAnim="@anim/md_styled_zoom_out"
+            app:exitAnim="@anim/md_styled_zoom_out"
+            app:popUpTo="@id/mainMenuFragment" />
         <action
             android:id="@+id/HomeToLogin"
-            app:destination="@id/loginFragment" />
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/md_styled_slide_up_normal"
+            app:exitAnim="@anim/md_styled_slide_down_normal"
+            app:popUpTo="@id/homeFragment" />
         <action
             android:id="@+id/HomeToReg"
-            app:destination="@id/registerFragment2" />
+            app:destination="@id/registerFragment2"
+            app:enterAnim="@anim/md_styled_slide_up_normal"
+            app:exitAnim="@anim/md_styled_slide_down_normal" />
     </fragment>
     <activity
         android:id="@+id/loginFragment"

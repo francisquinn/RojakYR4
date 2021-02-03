@@ -5,63 +5,68 @@
     android:id="@+id/frameLayout4"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#202C74"
     tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/Logo"
-        android:layout_width="160dp"
-        android:layout_height="160dp"
-        android:layout_marginTop="60dp"
-        android:contentDescription="@string/logo_img"
-        android:src="@drawable/logo"
-        app:layout_constraintBottom_toTopOf="@+id/Appname"
+        android:id="@+id/imageView3"
+        android:layout_width="196dp"
+        android:layout_height="218dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.601" />
+        app:layout_constraintVertical_bias="0.085"
+        app:srcCompat="@drawable/white_logo" />
 
     <TextView
         android:id="@+id/Appname"
         android:layout_width="160dp"
         android:layout_height="40dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="69dp"
         android:text="@string/project_name"
         android:textAlignment="center"
+        android:textColor="@color/white"
         android:textSize="30sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Logo" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/btn_login_page"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/btn_custom"
+        android:background="#2AC87B"
         android:fontFamily="@font/roboto_regular"
 
         android:text="SIGN IN"
         android:textColor="@android:color/white"
         android:textSize="16sp"
+        app:backgroundTint="#2AC87B"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Appname" />
+        app:layout_constraintTop_toBottomOf="@+id/Appname"
+        app:layout_constraintVertical_bias="0.314" />
 
     <Button
         android:id="@+id/btn_register_page"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:background="@drawable/btn_custom"
+        android:background="#2AC87B"
         android:fontFamily="@font/roboto_regular"
 
         android:text="SIGN UP"
         android:textColor="@android:color/white"
         android:textSize="16sp"
+        app:backgroundTint="#2AC87B"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -74,6 +79,7 @@
         android:layout_marginTop="29dp"
         android:layout_marginBottom="40dp"
         android:text="Test"
+        app:backgroundTint="#2AC87B"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
