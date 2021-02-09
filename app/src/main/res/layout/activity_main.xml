@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".MainActivity">
 
     <TextView
@@ -16,6 +17,26 @@
         android:textColor="#000"
         android:layout_marginTop="32dp"
         />
+
+    <com.visualizer.amplitude.AudioRecordView
+        android:id="@+id/audioRecordView"
+        android:layout_width="256dp"
+        android:layout_height="64dp"
+        android:layout_below="@+id/textview_sound_recorder_heading"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="83dp"
+        android:layout_marginTop="173dp"
+        android:layout_marginEnd="72dp"
+        app:chunkAlignTo="center"
+        app:chunkColor="@color/teal_700"
+        app:chunkMaxHeight="100dp"
+        app:chunkMinHeight="2dp"
+        app:chunkRoundedCorners="true"
+        app:chunkSoftTransition="true"
+        app:chunkSpace="5dp"
+        app:chunkWidth="5dp"
+        app:direction="leftToRight" />
 
     <Button
         android:id="@+id/button_start_recording"

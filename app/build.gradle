@@ -47,4 +47,5 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     implementation 'com.github.squti:Android-Wave-Recorder:1.5.0'
     implementation platform('com.google.firebase:firebase-bom:26.2.0')
+    implementation 'com.github.Armen101:AudioRecordView:1.0.5'
 }

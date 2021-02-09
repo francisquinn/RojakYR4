@@ -21,14 +21,16 @@ import com.google.firebase.storage.ktx.storageMetadata
 import java.io.File
 import com.google.firebase.storage.ktx.component1
 import com.google.firebase.storage.ktx.component2
+import com.visualizer.amplitude.AudioRecordView
 import java.io.IOException
-import java.util.Timer
+import java.util.*
 import kotlin.concurrent.schedule
 import kotlin.concurrent.timerTask
 
 class MainActivity : AppCompatActivity() {
 
     lateinit var storage: FirebaseStorage
+    private lateinit var audioRecordView: AudioRecordView
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -44,11 +46,17 @@ class MainActivity : AppCompatActivity() {
         var fileName = "/audioFile$num.wav"
         var filePath: String = externalCacheDir?.absolutePath + fileName
         var waveRecorder = WaveRecorder(filePath)
+        waveRecorder.waveConfig.sampleRate = 48000
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val startButton: Button = findViewById(R.id.button_start_recording)
         val stopButton: Button = findViewById(R.id.button_stop_recording)
+
+        audioRecordView = findViewById(R.id.audioRecordView)
+
+
+
         startButton.setOnClickListener {
             if (ContextCompat.checkSelfPermission(
                     this,
@@ -65,6 +73,21 @@ class MainActivity : AppCompatActivity() {
                 )
                 ActivityCompat.requestPermissions(this, permissions, 0)
             } else {
+
+
+
+                val waveTimer = Timer()
+                waveTimer?.schedule(object : TimerTask() {
+                    override fun run() {
+                        //val currentMaxAmplitude : Int = waveRecorder.onAmplitudeListener.toString()
+                        //audioRecordView.update(currentMaxAmplitude); //redraw view
+                        //Log.d("Recorder", waveRecorder.onAmplitudeListener.toString())
+                        waveRecorder.onAmplitudeListener = {
+                            Log.d("Recorder", "Amplitude : $it")
+                            audioRecordView.update(it);
+                        }
+                    }
+                }, 0, 100)
 
                 timer.scheduleAtFixedRate(timerTask {
                     //waveRecorder.startRecording()
@@ -96,11 +119,6 @@ class MainActivity : AppCompatActivity() {
             Log.d("Recorder", "Recording stopped")
 
             cloudUploader(filePath, fileName, storageRef)
-            
-            num++
-            fileName = "/audioFile$num.wav"
-            filePath = externalCacheDir?.absolutePath + fileName
-            waveRecorder = WaveRecorder(filePath)
         }
     }
 
