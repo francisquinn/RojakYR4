@@ -24,7 +24,7 @@ class RecordingPageFragment : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
 
 
-
+stats()
         val fileName =  File("/audioFile.wav")
 
         val filePath:String = externalCacheDir?.absolutePath + fileName
@@ -36,6 +36,9 @@ class RecordingPageFragment : AppCompatActivity(){
 
         val stopButton : Button = findViewById(R.id.pause)
 
+        //Button to go to stats Page
+
+
         waveRecorder.startRecording()
         Toast.makeText(this, "Recording started!", Toast.LENGTH_SHORT).show()
 
@@ -46,15 +49,12 @@ class RecordingPageFragment : AppCompatActivity(){
 
 
         }
-        val over : Button = findViewById(R.id.endHalf)
-        over.setOnClickListener{
-            startActivity(Intent(this, OverviewFragment::class.java))
-        }
+
 
         timer()
 
     }
-
+//function that starts the chronometer
     fun timer(){
 
         //Chronometer for timer
@@ -62,7 +62,7 @@ class RecordingPageFragment : AppCompatActivity(){
 
         //access the button using id
         val btn = findViewById<Button>(R.id.pause)
-
+//set to true so it starts on page load
         var isWorking = true
         meter.start()
         btn?.setOnClickListener(object : View.OnClickListener {
@@ -93,7 +93,12 @@ class RecordingPageFragment : AppCompatActivity(){
         })
     }
 
-
+fun stats(){
+    val tes : Button = findViewById(R.id.endHalf)
+    tes.setOnClickListener{
+        startActivity(Intent(this, OverviewViewModel::class.java))
+    }
+}
 
     override fun onDestroy() {
         super.onDestroy()

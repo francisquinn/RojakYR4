@@ -58,7 +58,7 @@ class OverviewViewModel : ViewModel() {
         viewModelScope.launch {
             try {
                 val listResult = MarsApi.retrofitService.getProperties()
-                _response.value = "Success: ${listResult.result} Mars properties retrieved"
+                _response.value = "Success: ${listResult.result.teamGoal} Game Information retrieved"
 
 
 
