@@ -78,7 +78,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="29dp"
         android:layout_marginBottom="40dp"
-        android:text="Test"
+        android:text="Enter"
         app:backgroundTint="#2AC87B"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -41,7 +41,7 @@ class EndGameFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_end_game, container, false)
 
         view.Home.setOnClickListener{ Navigation.findNavController(view).navigate(R.id.EndToMain)}
-        view.Stats.setOnClickListener{ Navigation.findNavController(view).navigate(R.id.EndToStats)}
+
 
 
 

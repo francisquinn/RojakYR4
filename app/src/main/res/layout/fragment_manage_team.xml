@@ -97,10 +97,11 @@
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <Button
+        android:id="@+id/ManageDone"
         android:layout_width="101dp"
         android:layout_height="62dp"
         android:layout_marginBottom="4dp"
-        android:text="Next"
+        android:text="@string/done_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

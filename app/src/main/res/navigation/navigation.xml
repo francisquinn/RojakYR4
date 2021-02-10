@@ -14,42 +14,18 @@
             android:id="@+id/MainMenuToManageTeam"
             app:destination="@id/manageTeamFragment" />
         <action
-            android:id="@+id/MainMenuToRecording"
-            app:destination="@id/recordingPageFragment" />
-        <action
             android:id="@+id/MainMenuToSetupMatch"
             app:destination="@id/setUpMatchFragment" />
+        <action
+            android:id="@+id/action_mainMenuFragment_to_recordingPageFragment"
+            app:destination="@id/recordingPageFragment"
+            app:enterAnim="@anim/md_styled_zoom_in" />
     </fragment>
     <fragment
         android:id="@+id/manageTeamFragment"
         android:name="com.example.tactalk.ManageTeamFragment"
         android:label="fragment_manage_team"
         tools:layout="@layout/fragment_manage_team" />
-    <fragment
-        android:id="@+id/recordingPageFragment"
-        android:name="com.example.tactalk.RecordingPageFragment"
-        android:label="RecordingPageFragment" >
-        <action
-            android:id="@+id/RecordToEnd"
-            app:destination="@id/endGameFragment" />
-        <action
-            android:id="@+id/RecordToStat"
-            app:destination="@id/statsFragment"
-            app:enterAnim="@anim/md_styled_slide_up_normal"
-            app:exitAnim="@anim/md_styled_slide_down_normal"
-            app:popUpTo="@id/recordingPageFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/statsFragment"
-        android:name="com.example.tactalk.StatsFragment"
-        android:label="fragment_stats"
-        tools:layout="@layout/fragment_stats" >
-        <action
-            android:id="@+id/StatToSecondHalf"
-            app:destination="@id/recordingPageFragment"
-            app:enterAnim="@anim/md_styled_slide_up_normal"
-            app:exitAnim="@anim/md_styled_slide_down_normal" />
-    </fragment>
     <fragment
         android:id="@+id/setUpMatchFragment"
         android:name="com.example.tactalk.SetUpMatchFragment"
@@ -66,11 +42,6 @@
         <action
             android:id="@+id/EndToMain"
             app:destination="@id/mainMenuFragment" />
-        <action
-            android:id="@+id/EndToStats"
-            app:destination="@id/statsFragment"
-            app:enterAnim="@anim/md_styled_slide_up_normal"
-            app:exitAnim="@anim/md_styled_slide_down_normal" />
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
@@ -93,6 +64,12 @@
             app:destination="@id/registerFragment2"
             app:enterAnim="@anim/md_styled_slide_up_normal"
             app:exitAnim="@anim/md_styled_slide_down_normal" />
+        <action
+            android:id="@+id/homeToOver"
+            app:destination="@id/overviewFragment" />
+        <action
+            android:id="@+id/homeToOverview"
+            app:destination="@id/overviewFragment2" />
     </fragment>
     <activity
         android:id="@+id/loginFragment"
@@ -104,4 +81,22 @@
         android:name="com.example.tactalk.activity.RegisterFragment"
         android:label="fragment_register"
         tools:layout="@layout/fragment_register" />
+    <activity
+        android:id="@+id/recordingPageFragment"
+        android:name="com.example.tactalk.RecordingPageFragment"
+        android:label="fragment_recording_page"
+        tools:layout="@layout/fragment_recording_page" />
+    <activity
+        android:id="@+id/statsFragment"
+        android:name="com.example.tactalk.StatsFragment"
+        android:label="fragment_stats"
+        tools:layout="@layout/fragment_stats" />
+    <fragment
+        android:id="@+id/overviewFragment"
+        android:name="com.example.tactalk.network.OverviewFragment"
+        android:label="OverviewFragment" />
+    <fragment
+        android:id="@+id/overviewFragment2"
+        android:name="com.example.tactalk.overview.OverviewFragment"
+        android:label="OverviewFragment" />
 </navigation>

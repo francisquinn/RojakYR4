@@ -12,6 +12,8 @@ import android.widget.Toast
 import androidx.navigation.Navigation
 import com.example.tactalk.activity.LoginFragment
 import com.example.tactalk.activity.RegisterFragment
+import com.example.tactalk.overview.OverviewFragment
+import com.example.tactalk.overview.OverviewViewModel
 
 class MainActivity : AppCompatActivity() {
 
@@ -24,5 +26,22 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this, "pressed!", Toast.LENGTH_SHORT).show()
             startActivity(Intent(this, MainMenuFragment::class.java))
         }
+
+        val login : Button = findViewById(R.id.btn_login_page)
+        login.setOnClickListener{
+            startActivity(Intent(this, LoginFragment::class.java))
+        }
+
+        val reg : Button = findViewById(R.id.btn_register_page)
+        reg.setOnClickListener{
+            startActivity(Intent(this, RegisterFragment::class.java))
+        }
+
+
+
+
+
+
     }
 }
+

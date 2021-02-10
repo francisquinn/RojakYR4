@@ -3,9 +3,9 @@
     package="com.example.tactalk">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -14,6 +14,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TacTalk">
+        <activity
+            android:name=".overview.OverviewFragment"
+            android:label="@string/title_activity_overview_fragment"
+            android:theme="@style/Theme.TacTalk.NoActionBar"></activity>
+        <activity
+            android:name=".SetUpMatchFragment"
+            android:label="@string/title_activity_set_up_match_fragment"
+            android:theme="@style/Theme.TacTalk.NoActionBar" />
+        <activity
+            android:name=".ManageTeamFragment"
+            android:label="@string/title_activity_manage_team_fragment"
+            android:theme="@style/Theme.TacTalk.NoActionBar" />
+        <activity
+            android:name=".StatsFragment"
+            android:label="@string/title_activity_stats_fragment"
+            android:theme="@style/Theme.TacTalk.NoActionBar" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,4 +43,5 @@
         <activity android:name=".MainMenuFragment" />
         <activity android:name=".HomeFragment" />
     </application>
+
 </manifest>

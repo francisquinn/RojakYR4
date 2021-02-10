@@ -45,7 +45,27 @@ class MainMenuFragment : AppCompatActivity(){
             }
             //Toast.makeText(this, "pressed record!", Toast.LENGTH_SHORT).show()
         }
+
+     manageTeam()
+        stats()
     }
+
+    fun manageTeam(){
+        val manageTeam  : Button = findViewById(R.id.ManageTeam_button)
+        manageTeam.setOnClickListener{
+            startActivity(Intent(this, ManageTeamFragment::class.java))
+        }
+    }
+
+    fun stats(){
+        val stats  : Button = findViewById(R.id.SetUpMatchButton)
+        stats.setOnClickListener{
+            startActivity(Intent(this, SetUpMatchFragment::class.java))
+        }
+    }
+
+
+
 
     /*override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
