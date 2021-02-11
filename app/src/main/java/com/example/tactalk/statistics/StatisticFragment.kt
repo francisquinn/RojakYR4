@@ -47,7 +47,8 @@ class StatisticFragment : AppCompatActivity() {
         binding.lifecycleOwner = this
 
         binding.viewModel = viewModel
-stats()
+        stats()
+        main()
     }
 
     fun stats(){
@@ -56,6 +57,15 @@ stats()
             startActivity(Intent(this, RecordingPageFragment::class.java))
         }
     }
+
+    fun main(){
+        val stats  : Button = findViewById(R.id.mainmenu)
+        stats.setOnClickListener{
+            startActivity(Intent(this, MainMenuFragment::class.java))
+        }
+    }
+
+
 
 }
 

@@ -30,7 +30,7 @@
             android:id="@+id/textView"
             android:layout_width="29dp"
             android:layout_height="42dp"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="32dp"
             android:text="@{viewModel.property.result.teamPoints}"
             android:textColor="@color/white"
             android:textSize="36sp"
@@ -96,7 +96,7 @@
             android:layout_width="148dp"
             android:layout_height="41dp"
             android:layout_marginStart="72dp"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="32dp"
             android:text="Points"
             android:textColor="@color/white"
             android:textSize="36sp"
@@ -162,10 +162,23 @@
             android:id="@+id/record"
             android:layout_width="176dp"
             android:layout_height="66dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginBottom="4dp"
             android:text="Record"
             app:backgroundTint="#2AC87B"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/mainmenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="Home"
+            android:textColor="@color/white"
+            app:backgroundTint="#000200"
+            app:layout_constraintBottom_toTopOf="@+id/record"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
