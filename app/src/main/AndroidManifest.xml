@@ -15,7 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TacTalk">
         <activity
-            android:name=".overview.OverviewFragment"
+            android:name=".statistics.StatisticFragment"
             android:label="@string/title_activity_overview_fragment"
             android:theme="@style/Theme.TacTalk.NoActionBar"></activity>
         <activity

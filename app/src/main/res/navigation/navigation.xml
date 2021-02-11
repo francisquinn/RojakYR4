@@ -90,13 +90,13 @@
         android:id="@+id/statsFragment"
         android:name="com.example.tactalk.StatsFragment"
         android:label="fragment_stats"
-        tools:layout="@layout/fragment_stats" />
+        tools:layout="@layout/fragment_statistic" />
     <fragment
         android:id="@+id/overviewFragment"
         android:name="com.example.tactalk.network.OverviewFragment"
         android:label="OverviewFragment" />
     <fragment
         android:id="@+id/overviewFragment2"
-        android:name="com.example.tactalk.overview.OverviewFragment"
+        android:name="com.example.tactalk.statistics.StatisticFragment"
         android:label="OverviewFragment" />
 </navigation>

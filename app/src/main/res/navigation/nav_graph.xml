@@ -67,7 +67,7 @@
     </fragment>
     <fragment
         android:id="@+id/FirstFragment"
-        android:name="com.example.tactalk.overview.FirstFragment"
+        android:name="com.example.tactalk.statistics.FirstFragment"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_first">
 
@@ -77,7 +77,7 @@
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
-        android:name="com.example.tactalk.overview.SecondFragment"
+        android:name="com.example.tactalk.statistics.SecondFragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_second">
 

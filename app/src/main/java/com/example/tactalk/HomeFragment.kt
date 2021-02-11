@@ -4,11 +4,9 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
-import kotlinx.android.synthetic.main.fragment_home_screen.view.*
 import androidx.appcompat.app.AppCompatActivity
 import com.example.tactalk.activity.LoginFragment
 import com.example.tactalk.activity.RegisterFragment
-import com.example.tactalk.overview.OverviewFragment
 
 class HomeFragment : AppCompatActivity() {
 

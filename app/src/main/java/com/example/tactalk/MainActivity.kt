@@ -4,16 +4,11 @@ package com.example.tactalk
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
-import androidx.navigation.Navigation
 import com.example.tactalk.activity.LoginFragment
 import com.example.tactalk.activity.RegisterFragment
-import com.example.tactalk.overview.OverviewFragment
-import com.example.tactalk.overview.OverviewViewModel
+import com.example.tactalk.statistics.StatisticFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -39,7 +34,7 @@ class MainActivity : AppCompatActivity() {
 
         val tes : Button = findViewById(R.id.testing)
         tes.setOnClickListener{
-            startActivity(Intent(this, OverviewFragment::class.java))
+            startActivity(Intent(this, StatisticFragment::class.java))
         }
 
 
