@@ -17,12 +17,17 @@
 
 package com.example.tactalk.statistics
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.*
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
+import com.example.tactalk.MainMenuFragment
 import com.example.tactalk.R
+import com.example.tactalk.RecordingPageFragment
+import com.example.tactalk.SetUpMatchFragment
 import com.example.tactalk.databinding.FragmentStatisticBinding
 
 /**
@@ -42,7 +47,14 @@ class StatisticFragment : AppCompatActivity() {
         binding.lifecycleOwner = this
 
         binding.viewModel = viewModel
+stats()
+    }
 
+    fun stats(){
+        val stats  : Button = findViewById(R.id.record)
+        stats.setOnClickListener{
+            startActivity(Intent(this, RecordingPageFragment::class.java))
+        }
     }
 
 }

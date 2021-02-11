@@ -13,26 +13,161 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context="com.example.tactalk.StatsFragment">
+
         <TextView
             android:id="@+id/textView12"
-            android:layout_width="313dp"
-            android:layout_height="161dp"
+            android:layout_width="316dp"
+            android:layout_height="102dp"
             android:text="STATISTICS"
+            android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="50sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@{viewModel.property.result.teamGoal}"
+            android:id="@+id/textView"
+            android:layout_width="29dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="60dp"
+            android:text="@{viewModel.property.result.teamPoints}"
             android:textColor="@color/white"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:textSize="36sp"
+            app:layout_constraintHorizontal_bias="0.769"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="29dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="44dp"
+            android:text="@{viewModel.property.result.teamGoal}"
+            android:textColor="@color/white"
+            android:textSize="36sp"
+            app:layout_constraintHorizontal_bias="0.769"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="29dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="44dp"
+            android:text="@{viewModel.property.result.teamShots}"
+            android:textColor="@color/white"
+            android:textSize="36sp"
+            app:layout_constraintHorizontal_bias="0.769"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+        <TextView
+            android:id="@+id/textView17"
+            android:layout_width="29dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="44dp"
+            android:text="@{viewModel.property.result.teamKickouts}"
+            android:textColor="@color/white"
+            android:textSize="36sp"
+            app:layout_constraintHorizontal_bias="0.769"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView14" />
+
+        <TextView
+            android:id="@+id/textView23"
+            android:layout_width="29dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="44dp"
+            android:text="@{viewModel.property.result.teamWides}"
+            android:textColor="@color/white"
+            android:textSize="36sp"
+            app:layout_constraintHorizontal_bias="0.769"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView17" />
+
+        <TextView
+            android:id="@+id/textView18"
+            android:layout_width="148dp"
+            android:layout_height="41dp"
+            android:layout_marginStart="72dp"
+            android:layout_marginTop="60dp"
+            android:text="Points"
+            android:textColor="@color/white"
+            android:textSize="36sp"
+            app:layout_constraintEnd_toStartOf="@+id/textView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+        <TextView
+            android:id="@+id/textView19"
+            android:layout_width="148dp"
+            android:layout_height="41dp"
+            android:layout_marginStart="72dp"
+            android:layout_marginTop="46dp"
+            android:text="Goals"
+            android:textColor="@color/white"
+            android:textSize="36sp"
+            app:layout_constraintEnd_toStartOf="@+id/textView11"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView18" />
+
+        <TextView
+            android:id="@+id/textView20"
+            android:layout_width="148dp"
+            android:layout_height="41dp"
+            android:layout_marginStart="72dp"
+            android:layout_marginTop="45dp"
+            android:text="Shots"
+            android:textColor="@color/white"
+            android:textSize="36sp"
+            app:layout_constraintEnd_toStartOf="@+id/textView14"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView19" />
+
+        <TextView
+            android:id="@+id/textView21"
+            android:layout_width="148dp"
+            android:layout_height="41dp"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="45dp"
+            android:text="Kickouts"
+            android:textColor="@color/white"
+            android:textSize="36sp"
+            app:layout_constraintEnd_toStartOf="@+id/textView17"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView20" />
+
+        <TextView
+            android:id="@+id/textView22"
+            android:layout_width="148dp"
+            android:layout_height="41dp"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="44dp"
+            android:text="Wides"
+            android:textColor="@color/white"
+            android:textSize="36sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/textView23"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView21"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/record"
+            android:layout_width="176dp"
+            android:layout_height="66dp"
+            android:layout_marginBottom="16dp"
+            android:text="Record"
+            app:backgroundTint="#2AC87B"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

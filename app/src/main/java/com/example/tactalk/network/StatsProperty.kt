@@ -8,10 +8,10 @@ data class StatsProperty (
 
 data class Response (
         val teamGoal: String,
-        val teamPoints: Int,
-        val teamShots: Int,
-        val teamKickouts:Int,
-        val teamWides: Int,
+        val teamPoints: String,
+        val teamShots: String,
+        val teamKickouts:String,
+        val teamWides: String,
         val oppTeamGoal: Int,
         val oppTeamPoints:Int,
         val oppTeamShots: Int,

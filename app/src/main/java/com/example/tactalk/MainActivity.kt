@@ -32,10 +32,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, RegisterFragment::class.java))
         }
 
-        val tes : Button = findViewById(R.id.testing)
-        tes.setOnClickListener{
-            startActivity(Intent(this, StatisticFragment::class.java))
-        }
+
 
 
 
