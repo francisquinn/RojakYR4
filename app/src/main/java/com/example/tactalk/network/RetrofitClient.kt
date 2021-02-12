@@ -1,4 +1,4 @@
-package com.example.tactalk.Retrofit
+package com.example.tactalk.network
 
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
@@ -10,7 +10,7 @@ object RetrofitClient {
 
         fun getInstance():Retrofit {
             if (instance == null) instance = Retrofit.Builder()
-                    .baseUrl("http://10.0.2.2:3000/")
+                    .baseUrl("https://tactalk-rojak.herokuapp.com")
                     .addConverterFactory(ScalarsConverterFactory.create())
                     .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                     .build()

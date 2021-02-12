@@ -73,31 +73,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edt_email" />
 
-    <EditText
-        android:id="@+id/confirm_password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:background="@drawable/et_custom"
-        android:hint="@string/confirm_password"
-        android:inputType="textPassword"
-        android:maxLines="1"
-        android:padding="15dp"
-        android:selectAllOnFocus="true"
-        android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edt_password" />
-
     <Button
         android:id="@+id/btn_register"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="start"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="44dp"
         android:layout_marginEnd="16dp"
         android:background="@drawable/btn_custom"
         android:fontFamily="@font/roboto_regular"
@@ -107,15 +89,15 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/confirm_password" />
+        app:layout_constraintTop_toBottomOf="@+id/edt_password" />
 
     <TextView
         android:id="@+id/goLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:onClick="onClick"
         android:focusable="true"
+        android:onClick="onClick"
         android:text="@string/have_account"
         android:textAlignment="center"
         android:textSize="16sp"

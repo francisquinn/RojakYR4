@@ -21,7 +21,7 @@
 
 
     <EditText
-        android:id="@+id/edt_name"
+        android:id="@+id/edt_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -54,7 +54,7 @@
         android:padding="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edt_name" />
+        app:layout_constraintTop_toBottomOf="@+id/edt_email" />
 
     <Button
         android:id="@+id/btn_login"
@@ -62,11 +62,11 @@
         android:layout_height="wrap_content"
         android:layout_gravity="start"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="44dp"
         android:layout_marginEnd="16dp"
         android:background="@drawable/btn_custom"
-        android:onClick="onClick"
         android:fontFamily="@font/roboto_regular"
+        android:onClick="onClick"
         android:text="@string/sign_in"
         android:textColor="@android:color/white"
         android:textSize="16sp"

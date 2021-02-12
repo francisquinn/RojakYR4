@@ -1,31 +1,32 @@
 package com.example.tactalk.activity
 
-
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.tactalk.MainActivity
 import com.example.tactalk.R
-import com.example.tactalk.Retrofit.IMyService
-import com.example.tactalk.Retrofit.RetrofitClient
+import com.example.tactalk.network.TacTalkAPI
+import com.example.tactalk.network.RetrofitClient
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
-import kotlinx.android.synthetic.main.fragment_login.*
 
+import kotlinx.android.synthetic.main.fragment_login.*
+import kotlinx.android.synthetic.main.fragment_login.view.*
 
 class LoginFragment : AppCompatActivity() {
 
-    lateinit var iMyService: IMyService
+    lateinit var tacTalkAPI: TacTalkAPI
     internal var compositeDisposable = CompositeDisposable()
-
 
     override fun onStop() {
         compositeDisposable.clear();
         super.onStop()
     }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,7 +34,7 @@ class LoginFragment : AppCompatActivity() {
 
         //API
         val retrofit = RetrofitClient.getInstance();
-        iMyService = retrofit.create(IMyService::class.java)
+        tacTalkAPI = retrofit.create(TacTalkAPI::class.java)
 
     }
 
@@ -41,21 +42,23 @@ class LoginFragment : AppCompatActivity() {
         when(view.id){
             R.id.btn_login -> {
                 // go to login page
-                loginUser(edt_name.text.toString(), edt_password.text.toString())
+                loginUser(edt_email.text.toString(), edt_password.text.toString())
+                startActivity(Intent(this, MainActivity::class.java))
             }
             R.id.goRegister -> {
                 // go to login page
                 startActivity(Intent(this, RegisterFragment::class.java))
+                finish()
             }
 
         }
 
     }
 
-    private fun loginUser(name: String, password: String) {
+    private fun loginUser(email: String, password: String) {
         //check empty
-        if (TextUtils.isEmpty(name)){
-            Toast.makeText(this@LoginFragment, "Name can not be null or Empty", Toast.LENGTH_SHORT).show()
+        if (TextUtils.isEmpty(email)){
+            Toast.makeText(this@LoginFragment, "Email can not be null or Empty", Toast.LENGTH_SHORT).show()
             return;
         }
 
@@ -64,7 +67,7 @@ class LoginFragment : AppCompatActivity() {
             return;
         }
 
-        compositeDisposable.addAll(iMyService.loginUser(name, password)
+        compositeDisposable.addAll(tacTalkAPI.loginUser(email, password)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe { result ->
