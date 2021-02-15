@@ -3,6 +3,7 @@
     <string name="welcome">Welcome to TacTalk</string>
 
     <string-array name="game_type">
+        <item>Please Select A Game Type</item>
         <item>Championship</item>
         <item>Friendly</item>
         <item>Europe Cup</item>
@@ -10,11 +11,19 @@
     </string-array>
 
     <string-array name="team_colour">
+        <item>Please Select A Team Colour</item>
+        <item>Blue</item>
+        <item>Green</item>
+    </string-array>
+
+    <string-array name="opp_colour">
+        <item>Please Select A Opposition Colour</item>
         <item>Blue</item>
         <item>Green</item>
     </string-array>
 
     <string-array name="chose_public">
+        <item>Please Chosen Public or Not</item>
         <item>Yes</item>
         <item>Not</item>
     </string-array>
@@ -63,7 +72,6 @@
     \n\nJohn Doe        2
     \nPaddy Brady        3</string>
     <string name="done_button">Done</string>
-    <string name="match_date">dd/mm/yy</string>
     <string name="match_opposition">Opposition</string>
     <string name="match_location">Location</string>
 

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -29,286 +30,150 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <LinearLayout
-                android:id="@+id/firstLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:orientation="horizontal"
-                android:weightSum="2">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="50dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_weight="0.6"
-                    android:gravity="center_vertical"
-                    android:paddingLeft="10dp"
-                    android:text="Game Name"
-                    android:textColor="@color/blackColor" />
-
                 <EditText
                     android:id="@+id/edt_game_name"
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="10dp"
                     android:layout_height="50dp"
+                    android:layout_weight="2"
                     android:layout_marginLeft="10dp"
-                    android:layout_weight="1.4"
+                    android:layout_marginRight="10dp"
                     android:background="@color/editTextBack"
                     android:hint="Game Name"
                     android:imeOptions="actionNext"
                     android:paddingLeft="10dp"
                     android:singleLine="true"
                     android:textColor="@color/blackColor" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/secondLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:orientation="horizontal"
-                android:weightSum="2">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="50dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_weight="0.6"
-                    android:gravity="center_vertical"
-                    android:paddingLeft="10dp"
-                    android:text="Game Type"
-                    android:textColor="@color/blackColor" />
 
                 <Spinner
                     android:id="@+id/chosen_game_type"
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="20dp"
                     android:layout_height="50dp"
+                    android:layout_weight="2"
                     android:layout_marginLeft="10dp"
-                    android:layout_weight="1.4"
+                    android:layout_marginRight="10dp"
                     android:background="@color/editTextBack"
                     android:hint="Chosen Game Type"
                     android:entries="@array/game_type"
                     android:paddingLeft="10dp" />
-            </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/thirdLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:orientation="horizontal"
-                android:weightSum="2">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="50dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_weight="0.6"
-                    android:gravity="center_vertical"
-                    android:paddingLeft="10dp"
-                    android:text="Team Name"
-                    android:textColor="@color/blackColor" />
 
                 <EditText
                     android:id="@+id/edt_team_name"
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="20dp"
                     android:layout_height="50dp"
+                    android:layout_weight="2"
                     android:layout_marginLeft="10dp"
-                    android:layout_weight="1.4"
+                    android:layout_marginRight="10dp"
                     android:background="@color/editTextBack"
                     android:hint="Team Name"
                     android:imeOptions="actionNext"
                     android:paddingLeft="10dp"
                     android:singleLine="true"
                     android:textColor="@color/blackColor" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/fourthLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:orientation="horizontal"
-                android:weightSum="2">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="50dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_weight="0.6"
-                    android:gravity="center_vertical"
-                    android:paddingLeft="10dp"
-                    android:text="Team Colour"
-                    android:textColor="@color/blackColor" />
 
                 <Spinner
                     android:id="@+id/chosen_team_colour"
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="20dp"
                     android:layout_height="50dp"
+                    android:layout_weight="2"
                     android:layout_marginLeft="10dp"
-                    android:layout_weight="1.4"
+                    android:layout_marginRight="10dp"
                     android:background="@color/editTextBack"
                     android:hint="Chosen Team Colour"
                     android:paddingLeft="10dp"
                     android:entries="@array/team_colour"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/fifthLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:orientation="horizontal"
-                android:weightSum="2">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="50dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_weight="0.6"
-                    android:gravity="center_vertical"
-                    android:paddingLeft="10dp"
-                    android:text="Opposition"
-                    android:textColor="@color/blackColor" />
 
                 <EditText
                     android:id="@+id/edt_opposition"
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="20dp"
                     android:layout_height="50dp"
+                    android:layout_weight="2"
                     android:layout_marginLeft="10dp"
-                    android:layout_weight="1.4"
+                    android:layout_marginRight="10dp"
                     android:background="@color/editTextBack"
                     android:hint="Opposition"
                     android:imeOptions="actionNext"
                     android:paddingLeft="10dp"
                     android:singleLine="true"
                     android:textColor="@color/blackColor" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/sixthLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:orientation="horizontal"
-                android:weightSum="2">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="50dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_weight="0.6"
-                    android:gravity="center_vertical"
-                    android:paddingLeft="10dp"
-                    android:text="OppColour"
-                    android:textColor="@color/blackColor" />
 
                 <Spinner
                     android:id="@+id/chosen_opp_colour"
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="20dp"
                     android:layout_height="50dp"
+                    android:layout_weight="2"
                     android:layout_marginLeft="10dp"
-                    android:layout_weight="1.4"
+                    android:layout_marginRight="10dp"
                     android:background="@color/editTextBack"
                     android:hint="Chosen Opposition Colour"
                     android:paddingLeft="10dp"
-                    android:entries="@array/team_colour" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/seventhLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:orientation="horizontal"
-                android:weightSum="2">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="50dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_weight="0.6"
-                    android:gravity="center_vertical"
-                    android:paddingLeft="10dp"
-                    android:text="Location"
-                    android:textColor="@color/blackColor" />
+                    android:entries="@array/opp_colour" />
 
                 <EditText
                     android:id="@+id/edt_location"
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="20dp"
                     android:layout_height="50dp"
+                    android:layout_weight="2"
                     android:layout_marginLeft="10dp"
-                    android:layout_weight="1.4"
+                    android:layout_marginRight="10dp"
                     android:background="@color/editTextBack"
                     android:hint="Location"
                     android:imeOptions="actionNext"
                     android:paddingLeft="10dp"
                     android:textColor="@color/blackColor" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/eightLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:orientation="horizontal"
-                android:weightSum="2">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="50dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_weight="0.6"
-                    android:gravity="center_vertical"
-                    android:paddingLeft="10dp"
-                    android:text="Public"
-                    android:textColor="@color/blackColor" />
 
                 <Spinner
                     android:id="@+id/chosen_public"
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="20dp"
                     android:layout_height="50dp"
+                    android:layout_weight="2"
                     android:layout_marginLeft="10dp"
-                    android:layout_weight="1.4"
+                    android:layout_marginRight="10dp"
                     android:background="@color/editTextBack"
                     android:hint="Chosen Public or Not"
                     android:imeOptions="actionNext"
                     android:paddingLeft="10dp"
                     android:entries="@array/chose_public"/>
-            </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/nineLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:orientation="horizontal"
-                android:weightSum="2">
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:orientation="horizontal">
 
                 <!-- place one TextView and one EditText inside layout using weight property -->
 
                 <TextView
+                    android:id="@+id/selectedDate"
                     android:layout_width="0dp"
                     android:layout_height="50dp"
                     android:layout_marginRight="10dp"
-                    android:layout_weight="0.6"
+                    android:layout_weight="1.2"
+                    android:background="@color/editTextBack"
                     android:gravity="center_vertical"
-                    android:paddingLeft="10dp"
-                    android:text="Start Date"
-                    android:textColor="@color/blackColor" />
+                    android:paddingLeft="10dp" />
 
-                <EditText
-                    android:id="@+id/set_match_date"
+                <Button
+                    android:id="@+id/selectDate"
                     android:layout_width="0dp"
                     android:layout_height="50dp"
                     android:layout_marginLeft="10dp"
-                    android:layout_weight="1.4"
-                    android:background="@color/editTextBack"
-                    android:hint="Chosen Match Start Date"
-                    android:imeOptions="actionNext"
+                    android:layout_weight="0.8"
+                    android:hint="Select Date"
                     android:paddingLeft="10dp"
-                    android:singleLine="true"
-                    android:textColor="@color/blackColor" />
+                    android:onClick="onClick"/>
+
             </LinearLayout>
 
             <LinearLayout
@@ -316,33 +181,33 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:orientation="horizontal"
                 android:weightSum="2">
 
                 <!-- place one TextView and one EditText inside layout using weight property -->
 
                 <TextView
+                    android:id="@+id/selectedTime"
                     android:layout_width="0dp"
                     android:layout_height="50dp"
                     android:layout_marginRight="10dp"
-                    android:layout_weight="0.6"
+                    android:layout_weight="1.2"
+                    android:background="@color/editTextBack"
                     android:gravity="center_vertical"
-                    android:paddingLeft="10dp"
-                    android:text="Start Time"
-                    android:textColor="@color/blackColor" />
+                    android:paddingLeft="10dp" />
 
-                <EditText
-                    android:id="@+id/set_match_time"
+                <Button
+                    android:id="@+id/selectTime"
                     android:layout_width="0dp"
                     android:layout_height="50dp"
                     android:layout_marginLeft="10dp"
-                    android:layout_weight="1.4"
-                    android:background="@color/editTextBack"
-                    android:hint="Chosen Match Start Time"
-                    android:imeOptions="actionNext"
+                    android:layout_weight="0.8"
+                    android:hint="Select Time"
                     android:paddingLeft="10dp"
-                    android:singleLine="true"
-                    android:textColor="@color/blackColor" />
+                    />
+
             </LinearLayout>
 
             <Button
@@ -351,8 +216,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:background="@drawable/btn_custom"
-                android:onClick="onClick"
-                android:text="@string/done_button" />
+                android:text="@string/done_button"
+                android:onClick="onClick"/>
         </LinearLayout>
 
     </ScrollView>
