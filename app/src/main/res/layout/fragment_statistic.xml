@@ -16,8 +16,8 @@
 
         <TextView
             android:id="@+id/textView12"
-            android:layout_width="322dp"
-            android:layout_height="65dp"
+            android:layout_width="327dp"
+            android:layout_height="54dp"
             android:text="STATISTICS"
             android:textAlignment="center"
             android:textColor="@color/white"
@@ -27,56 +27,60 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/points2"
-            android:layout_width="29dp"
-            android:layout_height="42dp"
-            android:layout_marginTop="68dp"
-            android:text="@{viewModel.property.result.teamPoints}"
+            android:id="@+id/homepoints"
+            android:layout_width="23dp"
+            android:layout_height="27dp"
+            android:layout_marginTop="28dp"
+            android:text="@{viewModel.property.result.TeamPoints}"
+            android:textAlignment="viewEnd"
             android:textColor="@color/white"
-            android:textSize="36sp"
-            app:layout_constraintHorizontal_bias="0.769"
+            android:textSize="24sp"
+            app:layout_constraintHorizontal_bias="0.713"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
         <TextView
-            android:id="@+id/oppoints2"
-            android:layout_width="29dp"
-            android:layout_height="42dp"
-            android:layout_marginTop="68dp"
+            android:id="@+id/oppoints"
+            android:layout_width="23dp"
+            android:layout_height="27dp"
+            android:layout_marginTop="56dp"
             android:text="@{viewModel.property.result.oppTeamPoints}"
+            android:textAlignment="viewEnd"
             android:textColor="@color/white"
-            android:textSize="36sp"
-            app:layout_constraintHorizontal_bias="0.769"
+            android:textSize="24sp"
+            app:layout_constraintHorizontal_bias="0.713"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
         <TextView
-            android:id="@+id/goals2"
-            android:layout_width="29dp"
-            android:layout_height="42dp"
-            android:layout_marginTop="20dp"
+            android:id="@+id/homegoals"
+            android:layout_width="24dp"
+            android:layout_height="28dp"
+            android:layout_marginTop="28dp"
             android:text="@{viewModel.property.result.teamGoal}"
+            android:textAlignment="viewEnd"
             android:textColor="@color/white"
-            android:textSize="36sp"
-            app:layout_constraintHorizontal_bias="0.769"
+            android:textSize="24sp"
+            app:layout_constraintHorizontal_bias="0.602"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/points2" />
+            app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
         <TextView
-            android:id="@+id/opgoals2"
-            android:layout_width="29dp"
-            android:layout_height="42dp"
-            android:layout_marginTop="20dp"
+            android:id="@+id/opgoals"
+            android:layout_width="24dp"
+            android:layout_height="28dp"
+            android:layout_marginTop="56dp"
             android:text="@{viewModel.property.result.oppTeamGoal}"
+            android:textAlignment="viewEnd"
             android:textColor="@color/white"
-            android:textSize="36sp"
-            app:layout_constraintHorizontal_bias="0.769"
+            android:textSize="24sp"
+            app:layout_constraintHorizontal_bias="0.602"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/points2" />
+            app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
         <TextView
             android:id="@+id/shots2"
@@ -86,10 +90,10 @@
             android:text="@{viewModel.property.result.teamShots}"
             android:textColor="@color/white"
             android:textSize="36sp"
-            app:layout_constraintHorizontal_bias="0.769"
+            app:layout_constraintHorizontal_bias="0.767"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/goals2" />
+            app:layout_constraintTop_toBottomOf="@+id/op2" />
 
         <TextView
             android:id="@+id/opshots2"
@@ -99,10 +103,10 @@
             android:text="@{viewModel.property.result.oppTeamShots}"
             android:textColor="@color/white"
             android:textSize="36sp"
-            app:layout_constraintHorizontal_bias="0.769"
+            app:layout_constraintHorizontal_bias="0.767"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/goals2" />
+            app:layout_constraintTop_toBottomOf="@+id/op2" />
 
         <TextView
             android:id="@+id/opkickout2"
@@ -134,16 +138,43 @@
             android:id="@+id/wides2"
             android:layout_width="29dp"
             android:layout_height="42dp"
+            android:layout_marginTop="20dp"
             android:text="@{viewModel.property.result.teamWides}"
             android:textColor="@color/white"
             android:textSize="36sp"
             app:layout_constraintHorizontal_bias="0.769"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/opwides2" />
+            app:layout_constraintTop_toBottomOf="@+id/kickout2" />
 
         <TextView
-            android:id="@+id/opwides2"
+            android:id="@+id/turn"
+            android:layout_width="29dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="20dp"
+            android:text="@{viewModel.property.result.teamTurnover}"
+            android:textColor="@color/white"
+            android:textSize="36sp"
+            app:layout_constraintHorizontal_bias="0.767"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/opwides" />
+
+        <TextView
+            android:id="@+id/opturn"
+            android:layout_width="29dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="20dp"
+            android:text="@{viewModel.property.result.oppTeamTurnover}"
+            android:textColor="@color/white"
+            android:textSize="36sp"
+            app:layout_constraintHorizontal_bias="0.769"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/opwides" />
+
+        <TextView
+            android:id="@+id/opwides"
             android:layout_width="29dp"
             android:layout_height="42dp"
             android:layout_marginTop="20dp"
@@ -156,46 +187,18 @@
             app:layout_constraintTop_toBottomOf="@+id/opkickout2" />
 
         <TextView
-            android:id="@+id/points"
-            android:layout_width="148dp"
-            android:layout_height="41dp"
-            android:layout_marginStart="72dp"
-            android:layout_marginTop="72dp"
-            android:text="Points"
-            android:textColor="@color/white"
-            android:textSize="36sp"
-            app:layout_constraintEnd_toStartOf="@+id/goals2"
-            app:layout_constraintHorizontal_bias="0.445"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView12" />
-
-        <TextView
-            android:id="@+id/goals"
-            android:layout_width="148dp"
-            android:layout_height="41dp"
-            android:layout_marginStart="72dp"
-            android:layout_marginTop="20dp"
-            android:text="Goals"
-            android:textColor="@color/white"
-            android:textSize="36sp"
-            app:layout_constraintEnd_toStartOf="@+id/goals2"
-            app:layout_constraintHorizontal_bias="0.445"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/points" />
-
-        <TextView
             android:id="@+id/shots"
             android:layout_width="148dp"
             android:layout_height="41dp"
             android:layout_marginStart="72dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="21dp"
             android:text="Shots"
             android:textColor="@color/white"
             android:textSize="36sp"
             app:layout_constraintEnd_toStartOf="@+id/shots2"
             app:layout_constraintHorizontal_bias="0.445"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/goals" />
+            app:layout_constraintTop_toBottomOf="@+id/op2" />
 
         <TextView
             android:id="@+id/kickout"
@@ -223,6 +226,19 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/kickout" />
 
+        <TextView
+            android:id="@+id/turnover"
+            android:layout_width="148dp"
+            android:layout_height="41dp"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="20dp"
+            android:text="Turnovers"
+            android:textColor="@color/white"
+            android:textSize="36sp"
+            app:layout_constraintEnd_toStartOf="@+id/wides2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/wides" />
+
         <Button
             android:id="@+id/record"
             android:layout_width="176dp"
@@ -240,7 +256,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
-            android:text="Next"
+            android:text="Next Half"
             android:textColor="@color/white"
             app:backgroundTint="#000200"
             app:layout_constraintBottom_toTopOf="@+id/record"
@@ -251,7 +267,7 @@
             android:id="@+id/switch1"
             android:layout_width="182dp"
             android:layout_height="55dp"
-            android:layout_marginBottom="24dp"
+            android:layout_marginBottom="4dp"
             android:text="Op Stats"
             android:textColor="@color/white"
             android:textSize="30sp"
@@ -262,24 +278,90 @@
 
         <TextView
             android:id="@+id/hometeam"
-            android:layout_width="128dp"
-            android:layout_height="32dp"
-            android:layout_marginTop="14dp"
-            android:text="Dundalk Fc"
+            android:layout_width="88dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="24dp"
+            android:text="Mayo"
             android:textColor="@color/white"
             android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.458"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+        <TextView
+            android:id="@+id/hometeam2"
+            android:layout_width="111dp"
+            android:layout_height="36dp"
+            android:layout_marginTop="100dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="MAYO"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+        <TextView
+            android:id="@+id/op2"
+            android:layout_width="111dp"
+            android:layout_height="36dp"
+            android:layout_marginTop="100dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="DUBLIN"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="30sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
         <TextView
             android:id="@+id/op"
-            android:layout_width="164dp"
-            android:layout_height="34dp"
-            android:layout_marginTop="14dp"
-            android:text="Swords Celtic"
+            android:layout_width="85dp"
+            android:layout_height="29dp"
+            android:layout_marginTop="56dp"
+            android:text="Dublin"
             android:textColor="@color/white"
             android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.453"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="64dp"
+            android:text=":"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toStartOf="@+id/homepoints"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/homegoals"
+            app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="32dp"
+            android:text=":"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toStartOf="@+id/homepoints"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/homegoals"
+            app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1st Half"
+            android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView12" />

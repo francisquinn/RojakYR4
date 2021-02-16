@@ -11,6 +11,7 @@ data class Response (
         val teamPoints: String,
         val teamShots: String,
         val teamKickouts:String,
+        val teamTurnover:String,
         val teamWides: String,
         val oppTeamGoal: String,
         val oppTeamPoints:String,

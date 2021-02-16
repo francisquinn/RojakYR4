@@ -20,12 +20,10 @@ package com.example.tactalk.statistics
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isInvisible
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
-import com.example.tactalk.EndGameFragment
 import com.example.tactalk.MainMenuFragment
 import com.example.tactalk.R
 import com.example.tactalk.RecordingPageFragment
@@ -55,10 +53,7 @@ class StatisticFragment : AppCompatActivity() {
 
 
         //for home team stats
-        hometeam.isInvisible=false
-        goals2.isInvisible = false
-
-        points2.isInvisible = false
+        hometeam2.isInvisible = false
 
         shots2.isInvisible = false
 
@@ -66,28 +61,26 @@ class StatisticFragment : AppCompatActivity() {
 
         wides2.isInvisible = false
 
+        turn.isInvisible = false
+
         //for opp team
 
-        op.isInvisible=true
-        opgoals2.isInvisible = true
-
-        oppoints2.isInvisible = true
+        op2.isInvisible = true
 
         opshots2.isInvisible = true
 
         opkickout2.isInvisible = true
 
-        opwides2.isInvisible = true
+        opwides.isInvisible = true
+
+        opturn.isInvisible = true
 
         switch1.setOnCheckedChangeListener { buttonView, isChecked ->
             if (isChecked) {
                 // The switch is enabled/checked
 
 
-                hometeam.isInvisible=false
-                goals2.isInvisible = false
-
-                points2.isInvisible = false
+                hometeam2.isInvisible = false
 
                 shots2.isInvisible = false
 
@@ -95,26 +88,24 @@ class StatisticFragment : AppCompatActivity() {
 
                 wides2.isInvisible = false
 
+                opturn.isInvisible = false
+
 
                 //op team
-                op.isInvisible=true
-                opgoals2.isInvisible = true
-
-                oppoints2.isInvisible = true
+                op2.isInvisible = true
 
                 opshots2.isInvisible = true
+
+                opwides.isInvisible = true
 
                 opkickout2.isInvisible = true
 
 
-                opwides2.isInvisible = true
+                turn.isInvisible = true
             } else {
                 // The switch is disabled
 
-                hometeam.isInvisible=true
-                goals2.isInvisible = true
-
-                points2.isInvisible = true
+                hometeam2.isInvisible = true
 
                 shots2.isInvisible = true
 
@@ -122,19 +113,20 @@ class StatisticFragment : AppCompatActivity() {
 
                 wides2.isInvisible = true
 
+                turn.isInvisible = true
+
 
 
                 // op team
-                op.isInvisible=false
-                opgoals2.isInvisible = false
-
-                oppoints2.isInvisible = false
+                op2.isInvisible = false
 
                 opshots2.isInvisible = false
 
                 opkickout2.isInvisible = false
 
-                opwides2.isInvisible = false
+                opwides.isInvisible = false
+
+                opturn.isInvisible = false
             }
         }
 
@@ -145,10 +137,7 @@ class StatisticFragment : AppCompatActivity() {
                 // If switch button is checked/on then
                 // The switch is enabled/checked
 
-                hometeam.isInvisible=true
-                goals2.isInvisible = true
-
-                points2.isInvisible = true
+                hometeam2.isInvisible = true
 
                 shots2.isInvisible = true
 
@@ -156,25 +145,23 @@ class StatisticFragment : AppCompatActivity() {
 
                 wides2.isInvisible = true
 
-                //op team
-                op.isInvisible=false
-                opgoals2.isInvisible = false
+                turn.isInvisible = true
 
-                oppoints2.isInvisible = false
+                //op team
+                op2.isInvisible = false
 
                 opshots2.isInvisible = false
+
+                opwides.isInvisible = false
 
                 opkickout2.isInvisible = false
 
 
-                opwides2.isInvisible = false
+                opturn.isInvisible = false
             }else{
                 // The switch is unchecked
 
-                hometeam.isInvisible=false
-                goals2.isInvisible = false
-
-                points2.isInvisible = false
+                hometeam2.isInvisible = false
 
                 shots2.isInvisible = false
 
@@ -182,17 +169,18 @@ class StatisticFragment : AppCompatActivity() {
 
                 wides2.isInvisible = false
 
-                //op team
-                op.isInvisible=true
-                opgoals2.isInvisible = true
+                turn.isInvisible = false
 
-                oppoints2.isInvisible = true
+                //op team
+                op2.isInvisible = true
 
                 opshots2.isInvisible = true
 
                 opkickout2.isInvisible = true
 
-                opwides2.isInvisible = true
+                opwides.isInvisible = true
+
+                opturn.isInvisible = true
             }
         }
 
