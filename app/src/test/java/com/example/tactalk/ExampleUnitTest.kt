@@ -1,4 +1,4 @@
-package com.example.recorddemo
+package com.example.tactalk
 
 import org.junit.Test
 
