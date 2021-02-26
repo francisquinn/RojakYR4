@@ -8,17 +8,24 @@ import android.widget.Button
 import android.widget.Chronometer
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isInvisible
+import androidx.lifecycle.ViewModelProvider
+import com.example.tactalk.statistics.RecordingPageViewModel
 import com.example.tactalk.statistics.StatisticFragment
 import com.example.tactalk.statistics.StatisticViewModel
 import com.github.squti.androidwaverecorder.WaveRecorder
 import kotlinx.android.synthetic.main.fragment_login.*
+import kotlinx.android.synthetic.main.fragment_recording_page.*
 import kotlinx.android.synthetic.main.fragment_register.*
+import kotlinx.android.synthetic.main.fragment_statistic.*
 import java.io.File
 
 class RecordingPageFragment : AppCompatActivity() {
 
+    private val viewModel: RecordingPageViewModel by lazy {
+        ViewModelProvider(this).get(RecordingPageViewModel::class.java)
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
-
 
         val fileName = File("/audioFile.wav")
 
