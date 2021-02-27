@@ -5,13 +5,13 @@
     <data>
         <variable
             name="viewModel"
-            type="com.example.tactalk.statistics.RecordingPageViewModel" />
+            type="com.example.tactalk.recording.RecordingPageViewModel" />
     </data>
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#202C74"
-    tools:context=".RecordingPageFragment">
+    tools:context=".recording.RecordingPageFragment">
 
 
     <TextView

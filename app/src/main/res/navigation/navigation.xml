@@ -83,7 +83,7 @@
         tools:layout="@layout/fragment_register" />
     <activity
         android:id="@+id/recordingPageFragment"
-        android:name="com.example.tactalk.RecordingPageFragment"
+        android:name="com.example.tactalk.recording.RecordingPageFragment"
         android:label="fragment_recording_page"
         tools:layout="@layout/fragment_recording_page" />
     <activity

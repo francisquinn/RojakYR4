@@ -26,7 +26,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.example.tactalk.MainMenuFragment
 import com.example.tactalk.R
-import com.example.tactalk.RecordingPageFragment
+import com.example.tactalk.recording.RecordingPageFragment
 import com.example.tactalk.databinding.FragmentStatisticBinding
 import kotlinx.android.synthetic.main.fragment_statistic.*
 

@@ -1,18 +1,17 @@
-package com.example.tactalk
+package com.example.tactalk.recording
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.Chronometer
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.isInvisible
+import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
-import com.example.tactalk.statistics.RecordingPageViewModel
+import com.example.tactalk.R
+import com.example.tactalk.databinding.FragmentRecordingPageBinding
 import com.example.tactalk.statistics.StatisticFragment
-import com.example.tactalk.statistics.StatisticViewModel
 import com.github.squti.androidwaverecorder.WaveRecorder
 import kotlinx.android.synthetic.main.fragment_login.*
 import kotlinx.android.synthetic.main.fragment_recording_page.*
@@ -34,7 +33,14 @@ class RecordingPageFragment : AppCompatActivity() {
 
 
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.fragment_recording_page)
+
+        val binding: FragmentRecordingPageBinding = DataBindingUtil.setContentView(this, R.layout.fragment_recording_page)
+
+        binding.lifecycleOwner = this
+
+        binding.viewModel = viewModel
+
+
 
         val stopButton: Button = findViewById(R.id.pause)
 

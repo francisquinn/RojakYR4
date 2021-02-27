@@ -4,18 +4,11 @@ import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.widget.Toast
-import android.view.ViewGroup
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import androidx.navigation.Navigation
-import kotlinx.android.synthetic.main.fragment_home_screen.view.*
-import kotlinx.android.synthetic.main.fragment_main_menu.view.*
+import com.example.tactalk.recording.RecordingPageFragment
 
 class MainMenuFragment : AppCompatActivity(){
 

@@ -1,4 +1,4 @@
-package com.example.tactalk.statistics
+package com.example.tactalk.recording
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

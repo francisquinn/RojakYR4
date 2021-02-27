@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.tactalk">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -17,7 +18,7 @@
         <activity
             android:name=".statistics.StatisticFragment"
             android:label="@string/title_activity_overview_fragment"
-            android:theme="@style/Theme.TacTalk.NoActionBar"></activity>
+            android:theme="@style/Theme.TacTalk.NoActionBar"/>
         <activity
             android:name=".SetUpMatchFragment"
             android:label="@string/title_activity_set_up_match_fragment"
@@ -25,10 +26,6 @@
         <activity
             android:name=".ManageTeamFragment"
             android:label="@string/title_activity_manage_team_fragment"
-            android:theme="@style/Theme.TacTalk.NoActionBar" />
-        <activity
-            android:name=".StatsFragment"
-            android:label="@string/title_activity_stats_fragment"
             android:theme="@style/Theme.TacTalk.NoActionBar" />
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -39,7 +36,7 @@
         </activity>
         <activity android:name=".activity.LoginFragment" />
         <activity android:name=".activity.RegisterFragment" />
-        <activity android:name=".RecordingPageFragment" />
+        <activity android:name=".recording.RecordingPageFragment" />
         <activity android:name=".MainMenuFragment" />
         <activity android:name=".HomeFragment" />
     </application>
