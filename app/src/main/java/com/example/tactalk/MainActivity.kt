@@ -22,7 +22,7 @@ import java.util.*
 //            override fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
 //                selectedDate.setText(String.format("%d / %d / %d", dayOfMonth, month + 1, year))
 //            }
-//        }, year, month, day);
+//        }, year, month, day)
 //
 //
 //        selectDate.setOnClickListener({ v ->
@@ -30,7 +30,7 @@ import java.util.*
 //        })
 //    }
 //}
-
+//
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {

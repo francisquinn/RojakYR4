@@ -22,7 +22,8 @@ interface TacTalkAPI {
     //user id if finish login, team id = -1, start time = -1,  public =1 , team color(blue green), oppColor()
     @POST("/user/setUpMatch")
     @FormUrlEncoded
-    fun setUpMatch(@Field("gameType") gameType: String,
+    fun setUpMatch(@Field("gameType") gameName: String,
+                   @Field("gameType") gameType: String,
                    @Field("teamName") teamName: String,
                    @Field("teamColor") teamColor: String,
                    @Field("opposition") opposition: String,

@@ -20,14 +20,16 @@
         android:textSize="30sp" />
 
     <ScrollView
+        android:id="@+id/content_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="16dp"
         android:scrollbars="none">
+
         <!-- LinearLayout Inside ScrollView -->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
                 <EditText
@@ -171,8 +173,8 @@
                     android:layout_marginLeft="10dp"
                     android:layout_weight="0.8"
                     android:hint="Select Date"
-                    android:paddingLeft="10dp"
-                    android:onClick="onClick"/>
+                    android:onClick="onClick"
+                    android:paddingLeft="10dp"/>
 
             </LinearLayout>
 
@@ -205,6 +207,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_weight="0.8"
                     android:hint="Select Time"
+                    android:onClick="onClick"
                     android:paddingLeft="10dp"
                     />
 
@@ -218,7 +221,9 @@
                 android:background="@drawable/btn_custom"
                 android:text="@string/done_button"
                 android:onClick="onClick"/>
+
         </LinearLayout>
+
 
     </ScrollView>
 
