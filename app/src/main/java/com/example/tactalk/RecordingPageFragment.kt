@@ -5,13 +5,10 @@ import android.net.Uri
 import android.os.Bundle
 import android.os.SystemClock
 import android.util.Log
-import android.view.View
 import android.widget.Button
 import android.widget.Chronometer
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.res.ResourcesCompat
-import com.example.tactalk.activity.LoginFragment
 import com.github.squti.androidwaverecorder.WaveRecorder
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
@@ -20,9 +17,9 @@ import com.google.firebase.storage.ktx.storage
 import com.google.firebase.storage.ktx.storageMetadata
 import com.visualizer.amplitude.AudioRecordView
 import java.io.File
+import java.util.*
 import com.google.firebase.storage.ktx.component1
 import com.google.firebase.storage.ktx.component2
-import java.util.*
 import kotlin.concurrent.timerTask
 
 class RecordingPageFragment : AppCompatActivity() {
@@ -86,7 +83,9 @@ class RecordingPageFragment : AppCompatActivity() {
             waveRecorder.stopRecording()
             println("StopRecording")
 
-            //cloudUploader(filePath, fileName, storageRef)
+            cloudUploader(filePath, fileName, storageRef)
+
+            deleteExternalStorage(fileName)
 
             num++
             fileName = "/60084b37e8c56c0978f5b004_$num.wav"
@@ -106,7 +105,10 @@ class RecordingPageFragment : AppCompatActivity() {
             recordingTimer.purge()
             waveRecorder.stopRecording()
             clock.stop()
-            //cloudUploader(filePath, fileName, storageRef)
+
+            cloudUploader(filePath, fileName, storageRef)
+
+            deleteExternalStorage(fileName)
 
             //Log.i("timerVAL", timerVal.toString())
 
@@ -144,7 +146,7 @@ class RecordingPageFragment : AppCompatActivity() {
     }
 
     // function to upload audio file to the cloud
-   /* private fun cloudUploader(filePath:String, fileName:String, storageRef: StorageReference){
+    private fun cloudUploader(filePath:String, fileName:String, storageRef: StorageReference){
         // Retrieve the file from the filePath
         val file = Uri.fromFile(File(filePath))
 
@@ -171,7 +173,19 @@ class RecordingPageFragment : AppCompatActivity() {
         }.addOnSuccessListener {
 
         }
-    }*/
+    }
+
+    private fun deleteExternalStorage(fileName: String){
+        val filePath = externalCacheDir?.absolutePath
+        try {
+            val file = File(filePath, fileName)
+            if (file.exists()) {
+                file.delete()
+            }
+        } catch (e: Exception) {
+            Log.e("CacheDelete", "Exception while deleting file " + e.message)
+        }
+    }
 
     // disable back button
     override fun onBackPressed() {}

@@ -12,9 +12,8 @@
     <string name="Start">Start</string>
     <string name="match_start">Start Recording!</string>
     <string name="startTime">0:00</string>
-    <string name="GameOver">GameOver</string>
     <string name="HomeButton">Home</string>
-    <string name="StatsButton">Stats</string>
+    <string name="view_statistics">View Statistics</string>
     <string name="BackButton">Back</string>
     <string name="FirstHalf">1st Half</string>
     <string name="TeamA">DUBLIN 0 – 00</string>
@@ -54,7 +53,7 @@
     <string name="Set_Up_Match">SETUP MATCH</string>
     <string name="ManageTeam">MANAGE TEAM</string>
     <string name="Record">Record</string>
-    <string name="Match_Over">MATCH OVER</string>
+    <string name="game_over">GAME OVER</string>
 
     <string name="working">Working</string>
     <string name="stopped">Stopped</string>

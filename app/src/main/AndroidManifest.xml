@@ -30,6 +30,7 @@
         <activity android:name=".HomeFragment" />
         <activity android:name=".StatsFragment" />
         <activity android:name=".EndGameFragment" />
+        <activity android:name=".user.UserFragment" />
 
         <meta-data
             android:name="preloaded_fonts"
