@@ -1,5 +1,6 @@
 package com.example.tactalk.user
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -33,7 +34,6 @@ class UserViewModel : ViewModel() {
         viewModelScope.launch {
             try {
                 _property.value = UserApi.retrofitService.getUserProperties()
-
             } catch (e: Exception) {
                 _response.value = "Failure: ${e.message}"
             }

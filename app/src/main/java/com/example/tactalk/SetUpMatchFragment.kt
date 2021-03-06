@@ -6,8 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
-import kotlinx.android.synthetic.main.fragment_main_menu.view.*
-import kotlinx.android.synthetic.main.fragment_set_up_match.view.*
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -41,7 +40,7 @@ class SetUpMatchFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_set_up_match, container, false)
 
 
-        view.doneButton.setOnClickListener{ Navigation.findNavController(view).navigate(R.id.SetupToMain)}
+
 
 
         return view

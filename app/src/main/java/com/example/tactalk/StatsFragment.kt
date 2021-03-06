@@ -2,15 +2,10 @@ package com.example.tactalk
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.tactalk.activity.RegisterFragment
-import kotlinx.android.synthetic.main.fragment_main_menu.view.*
-import kotlinx.android.synthetic.main.fragment_set_up_match.view.*
-import kotlinx.android.synthetic.main.fragment_stats.view.*
 
 class StatsFragment : AppCompatActivity() {
 
