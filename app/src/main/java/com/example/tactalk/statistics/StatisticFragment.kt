@@ -1,4 +1,4 @@
-package com.example.tactalk
+package com.example.tactalk.statistics
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,12 +6,28 @@ import android.view.View
 import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProvider
+import com.example.tactalk.EndGameFragment
+import com.example.tactalk.R
+import com.example.tactalk.databinding.FragmentStatisticsBinding
+import com.example.tactalk.recording.RecordingPageFragment
+import kotlinx.android.synthetic.main.fragment_statistics.*
 
-class StatsFragment : AppCompatActivity() {
+class StatisticFragment : AppCompatActivity() {
+
+    private val statsViewModel: StatisticViewModel by lazy {
+        ViewModelProvider(this).get(StatisticViewModel::class.java)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.fragment_stats)
+
+        val binding: FragmentStatisticsBinding = DataBindingUtil.setContentView(this, R.layout.fragment_statistics)
+
+        binding.lifecycleOwner = this
+
+        binding.statsViewModel = statsViewModel
 
         val secondHalf : Button = findViewById(R.id.second_half)
         val endGame : Button = findViewById(R.id.end_game)
@@ -33,7 +49,7 @@ class StatsFragment : AppCompatActivity() {
                     finish()
                 }
 
-            } else if (statPage == "full"){
+            } else if (statPage == "full") {
                 secondHalf.visibility = View.GONE
                 endGame.visibility = View.VISIBLE
 
@@ -42,14 +58,8 @@ class StatsFragment : AppCompatActivity() {
                 }
 
             }
-            //Log.i("statPage", statPage)
         }
-
-
-
-
     }
 
     override fun onBackPressed() {}
-
 }

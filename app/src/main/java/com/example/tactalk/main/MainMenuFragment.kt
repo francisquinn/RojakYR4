@@ -1,4 +1,4 @@
-package com.example.tactalk
+package com.example.tactalk.main
 
 import android.Manifest
 import android.content.Intent
@@ -10,6 +10,8 @@ import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import com.example.tactalk.R
+import com.example.tactalk.recording.RecordingPageFragment
 import com.example.tactalk.user.UserFragment
 
 class MainMenuFragment : AppCompatActivity(){
@@ -38,7 +40,7 @@ class MainMenuFragment : AppCompatActivity(){
                 ActivityCompat.requestPermissions(this, permissions, 0)
             } else {
                 //startActivity(Intent(this, RecordingPageFragment::class.java))
-                val timerVal = 600000
+                val timerVal = 0
                 val intent = Intent(this, RecordingPageFragment::class.java)
                 intent.putExtra("timerVal", timerVal)
                 startActivity(intent)

@@ -1,4 +1,4 @@
-package com.example.tactalk.network
+package com.example.tactalk.network.user
 
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory

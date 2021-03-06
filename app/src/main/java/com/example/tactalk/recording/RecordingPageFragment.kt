@@ -1,4 +1,4 @@
-package com.example.tactalk
+package com.example.tactalk.recording
 
 import android.content.Intent
 import android.net.Uri
@@ -9,6 +9,8 @@ import android.widget.Button
 import android.widget.Chronometer
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.res.ResourcesCompat
+import com.example.tactalk.R
+import com.example.tactalk.statistics.StatisticFragment
 import com.github.squti.androidwaverecorder.WaveRecorder
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
@@ -114,13 +116,13 @@ class RecordingPageFragment : AppCompatActivity() {
 
             if (timerVal > 1800000){
                 val statPage = "full"
-                val intent = Intent(this, StatsFragment::class.java)
+                val intent = Intent(this, StatisticFragment::class.java)
                 intent.putExtra("statPage", statPage)
                 startActivity(intent)
                 finish()
             } else {
                 val statPage = "half"
-                val intent = Intent(this, StatsFragment::class.java)
+                val intent = Intent(this, StatisticFragment::class.java)
                 intent.putExtra("statPage", statPage)
                 startActivity(intent)
                 finish()

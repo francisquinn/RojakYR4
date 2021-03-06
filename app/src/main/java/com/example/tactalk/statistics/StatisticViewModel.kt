@@ -1,14 +1,14 @@
-package com.example.tactalk.user
+package com.example.tactalk.statistics
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.tactalk.network.user.UserApi
-import com.example.tactalk.network.user.UserProperty
+import com.example.tactalk.network.statistics.StatsApi
+import com.example.tactalk.network.statistics.StatsProperty
 import kotlinx.coroutines.launch
 
-class UserViewModel : ViewModel() {
+class StatisticViewModel : ViewModel() {
 
     // The internal MutableLiveData String that stores the most recent response
     private val _response = MutableLiveData<String>()
@@ -17,22 +17,20 @@ class UserViewModel : ViewModel() {
     val response: LiveData<String>
         get() = _response
 
-    private val _property = MutableLiveData<UserProperty>()
+    private val _property = MutableLiveData<StatsProperty>()
 
-    val property: LiveData<UserProperty>
+    val property: LiveData<StatsProperty>
         get() = _property
 
     init {
-        getUserDetails()
+        getStatisticProperties()
     }
 
-    /**
-     * Sets the value of the status LiveData to the Mars API status.
-     */
-    private fun getUserDetails() {
+    private fun getStatisticProperties() {
         viewModelScope.launch {
             try {
-                _property.value = UserApi.retrofitService.getUserProperties()
+                _property.value = StatsApi.retrofitService.getStatProperties()
+
             } catch (e: Exception) {
                 _response.value = "Failure: ${e.message}"
             }

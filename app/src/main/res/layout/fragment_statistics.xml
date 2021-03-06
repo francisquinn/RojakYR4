@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fillViewport="true"
-    tools:context="com.example.tactalk.StatsFragment">
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="statsViewModel"
+            type="com.example.tactalk.statistics.StatisticViewModel" />
+    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#202C74">
+        tools:context="com.example.tactalk.statistics.StatisticFragment">
 
         <TextView
             android:id="@+id/textView"
@@ -87,7 +89,7 @@
             android:layout_width="169dp"
             android:layout_height="40dp"
             android:layout_marginTop="47dp"
-            android:text="Team A stats"
+            android:text="@{statsViewModel.property.result.teamGoal}"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="30sp"
@@ -96,4 +98,4 @@
             app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+</layout>
