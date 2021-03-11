@@ -9,7 +9,10 @@ import android.widget.Button
 import android.widget.Chronometer
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.res.ResourcesCompat
+import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProvider
 import com.example.tactalk.R
+import com.example.tactalk.databinding.FragmentRecordingPageBinding
 import com.example.tactalk.statistics.StatisticFragment
 import com.github.squti.androidwaverecorder.WaveRecorder
 import com.google.firebase.ktx.Firebase
@@ -28,6 +31,10 @@ class RecordingPageFragment : AppCompatActivity() {
 
     lateinit var storage: FirebaseStorage
     private lateinit var audioRecordView: AudioRecordView
+
+    private val recordViewModel: RecordingViewModel by lazy {
+        ViewModelProvider(this).get(RecordingViewModel::class.java)
+    }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -53,7 +60,10 @@ class RecordingPageFragment : AppCompatActivity() {
         waveRecorder.waveConfig.sampleRate = 32000
 
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.fragment_recording_page)
+
+        val binding: FragmentRecordingPageBinding = DataBindingUtil.setContentView(this, R.layout.fragment_recording_page)
+        binding.lifecycleOwner = this
+        binding.recordViewModel = recordViewModel
 
         // Match timer
         // Retrieve value from Intent
@@ -68,7 +78,6 @@ class RecordingPageFragment : AppCompatActivity() {
         val pauseButton: Button = findViewById(R.id.pause)
         audioRecordView = findViewById(R.id.audioRecordView)
 
-        // wave animation
         val waveTimer = Timer()
         waveTimer.schedule(object : TimerTask() {
             override fun run() {
@@ -88,6 +97,8 @@ class RecordingPageFragment : AppCompatActivity() {
             cloudUploader(filePath, fileName, storageRef)
 
             deleteExternalStorage(fileName)
+
+            getScore()
 
             num++
             fileName = "/60084b37e8c56c0978f5b004_$num.wav"
@@ -112,9 +123,11 @@ class RecordingPageFragment : AppCompatActivity() {
 
             deleteExternalStorage(fileName)
 
+            getScore()
+
             //Log.i("timerVAL", timerVal.toString())
 
-            if (timerVal > 1800000){
+            if (timerVal > 1800000) {
                 val statPage = "full"
                 val intent = Intent(this, StatisticFragment::class.java)
                 intent.putExtra("statPage", statPage)
@@ -132,23 +145,22 @@ class RecordingPageFragment : AppCompatActivity() {
 
         var buttonState = true
         pauseButton.setOnClickListener {
-            if (buttonState){
+            if (buttonState) {
                 pauseButton.setText(R.string.Start)
-                buttonState= !buttonState
+                buttonState = !buttonState
                 waveRecorder.stopRecording()
                 Log.d("Recorder", "Recording paused")
             } else {
                 pauseButton.setText(R.string.Pause)
-                buttonState= !buttonState
+                buttonState = !buttonState
                 waveRecorder.startRecording()
                 Log.d("Recorder", "Recording Started after pause")
             }
         }
-
     }
 
     // function to upload audio file to the cloud
-    private fun cloudUploader(filePath:String, fileName:String, storageRef: StorageReference){
+    private fun cloudUploader(filePath: String, fileName: String, storageRef: StorageReference) {
         // Retrieve the file from the filePath
         val file = Uri.fromFile(File(filePath))
 
@@ -177,7 +189,13 @@ class RecordingPageFragment : AppCompatActivity() {
         }
     }
 
-    private fun deleteExternalStorage(fileName: String){
+    private fun getScore() {
+
+        Log.i("getScore", "calling update game...")
+
+    }
+
+    private fun deleteExternalStorage(fileName: String) {
         val filePath = externalCacheDir?.absolutePath
         try {
             val file = File(filePath, fileName)

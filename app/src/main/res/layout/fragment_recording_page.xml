@@ -6,15 +6,15 @@
     <data>
 
         <variable
-            name="statsViewModel"
-            type="com.example.tactalk.statistics.StatisticViewModel" />
+            name="recordViewModel"
+            type="com.example.tactalk.recording.RecordingViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#202C74"
-        tools:context=".recording.RecordingPageFragment">
+        tools:context="com.example.tactalk.recording.RecordingPageFragment">
 
         <Chronometer
             android:id="@+id/match_time"
@@ -146,13 +146,36 @@
             android:layout_width="135dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="28dp"
             android:fontFamily="sans-serif"
             android:text="@string/TeamA"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="30sp"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBaseline_toBaselineOf="@+id/homeGoals"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/homeGoals"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="24dp"
+            android:text="@{recordViewModel.property.result.teamGoal}"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            app:layout_constraintStart_toEndOf="@+id/textView6"
+            app:layout_constraintTop_toBottomOf="@+id/firsthalf" />
+
+        <TextView
+            android:id="@+id/homePoints"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="68dp"
+            android:layout_marginTop="24dp"
+            android:text="@{recordViewModel.property.result.teamPoints}"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            app:layout_constraintStart_toEndOf="@+id/homeGoals"
             app:layout_constraintTop_toBottomOf="@+id/firsthalf" />
 
 

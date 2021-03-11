@@ -24,9 +24,7 @@ class StatisticFragment : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         val binding: FragmentStatisticsBinding = DataBindingUtil.setContentView(this, R.layout.fragment_statistics)
-
         binding.lifecycleOwner = this
-
         binding.statsViewModel = statsViewModel
 
         val secondHalf : Button = findViewById(R.id.second_half)
