@@ -78,6 +78,7 @@ class RecordingPageFragment : AppCompatActivity() {
         val pauseButton: Button = findViewById(R.id.pause)
         audioRecordView = findViewById(R.id.audioRecordView)
 
+        // Wave animation
         val waveTimer = Timer()
         waveTimer.schedule(object : TimerTask() {
             override fun run() {
@@ -92,7 +93,6 @@ class RecordingPageFragment : AppCompatActivity() {
         recordingTimer.scheduleAtFixedRate(timerTask {
             Log.d("Recorder", "Recording stopped")
             waveRecorder.stopRecording()
-            println("StopRecording")
 
             cloudUploader(filePath, fileName, storageRef)
 

@@ -17,7 +17,7 @@ private val retrofit = Retrofit.Builder()
         .build()
 
 interface StatsApiService {
-    @GET("user/games/updateGame/?dummyData=0&game_id=1&user_id=1")
+    @GET("user/games/updateGame/?game_id=60084b37e8c56c0978f5b004&user_id=602ce3432185a70004bb8d17")
     suspend fun getStatProperties(): StatsProperty
 }
 
