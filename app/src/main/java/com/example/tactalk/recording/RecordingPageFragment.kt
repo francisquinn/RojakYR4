@@ -3,6 +3,7 @@ package com.example.tactalk.recording
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.os.Handler
 import android.os.SystemClock
 import android.util.Log
 import android.widget.Button
@@ -39,8 +40,12 @@ class RecordingPageFragment : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
+        var baseSeconds = 0;
+        var secondaryBaseSeconds = 13;
+
         // Google Cloud Storage Bucket
         storage = Firebase.storage("gs://tactalk-bucket")
+
 
         // Points to the root reference
         val storageRef = storage.reference
@@ -48,16 +53,23 @@ class RecordingPageFragment : AppCompatActivity() {
         // 15 second audio upload timer
         val recordingTimer = Timer()
 
+        val secondaryRecordingTimer = Timer()
+
         // file order number
         var num = 1
 
         // test file name with hardcoded game_id
-        var fileName = "/60084b37e8c56c0978f5b004_$num.wav"
+        var fileName = "/game_60084b37e8c56c0978f5b004_"+num+"_0.wav"
+        var secondaryFileName = "/game_60084b37e8c56c0978f5b004_"+num+"_1.wav"
 
         // cache path & set up recorder
         var filePath: String = externalCacheDir?.absolutePath + fileName
         var waveRecorder = WaveRecorder(filePath)
         waveRecorder.waveConfig.sampleRate = 32000
+
+        //secondary WaveRecorder
+        var secondaryWaveRecorder = WaveRecorder(filePath)
+        secondaryWaveRecorder.waveConfig.sampleRate = 32000
 
         super.onCreate(savedInstanceState)
 
@@ -101,11 +113,12 @@ class RecordingPageFragment : AppCompatActivity() {
             getScore()
 
             num++
-            fileName = "/60084b37e8c56c0978f5b004_$num.wav"
+            fileName = "/game_60084b37e8c56c0978f5b004_"+num+"_"+baseSeconds+".wav"
             filePath = externalCacheDir?.absolutePath + fileName
             waveRecorder = WaveRecorder(filePath)
             waveRecorder.waveConfig.sampleRate = 32000
-        }, 15000, 15000)
+            baseSeconds += 15;
+        }, 30000, 15000)
 
         // start recorded once the activity is created
         recordingTimer.scheduleAtFixedRate(timerTask {
@@ -113,10 +126,47 @@ class RecordingPageFragment : AppCompatActivity() {
             Log.d("Recorder", "Recording started")
         }, 1, 15000)
 
+
+
+
+
+        //setup the secondary recorder
+        secondaryRecordingTimer.scheduleAtFixedRate(timerTask {
+                //anything you want to start after 3s
+
+                Log.d("Recorder", "Recording stopped")
+                secondaryWaveRecorder.stopRecording()
+
+
+                cloudUploader(filePath, secondaryFileName, storageRef)
+
+                deleteExternalStorage(secondaryFileName)
+
+                getScore()
+
+                num++
+                secondaryFileName = "/game_60084b37e8c56c0978f5b004_"+num+"_"+secondaryBaseSeconds+".wav"
+                filePath = externalCacheDir?.absolutePath + secondaryFileName
+                secondaryWaveRecorder = WaveRecorder(filePath)
+                secondaryWaveRecorder.waveConfig.sampleRate = 32000
+                secondaryBaseSeconds += 15;
+        }, 28001, 15000)
+
+        secondaryRecordingTimer.scheduleAtFixedRate(timerTask {
+            secondaryWaveRecorder.startRecording()
+            Log.d("Recorder", "Recording started")
+        }, 13001, 15000)
+
+
+
+
         stopButton.setOnClickListener {
             recordingTimer.cancel()
             recordingTimer.purge()
+            secondaryRecordingTimer.cancel()
+            secondaryRecordingTimer.purge()
             waveRecorder.stopRecording()
+            secondaryWaveRecorder.stopRecording()
             clock.stop()
 
             cloudUploader(filePath, fileName, storageRef)
