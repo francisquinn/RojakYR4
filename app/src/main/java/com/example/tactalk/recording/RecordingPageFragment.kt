@@ -4,6 +4,7 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.os.Handler
+import android.os.Looper
 import android.os.SystemClock
 import android.util.Log
 import android.widget.Button
@@ -33,15 +34,20 @@ class RecordingPageFragment : AppCompatActivity() {
     lateinit var storage: FirebaseStorage
     private lateinit var audioRecordView: AudioRecordView
 
+    private var fRest :Boolean = true;
+    private var sRest :Boolean = true;
+
     private val recordViewModel: RecordingViewModel by lazy {
         ViewModelProvider(this).get(RecordingViewModel::class.java)
     }
 
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
 
         var baseSeconds = 0;
-        var secondaryBaseSeconds = 13;
+        var secondaryBaseSeconds = 12;
 
         // Google Cloud Storage Bucket
         storage = Firebase.storage("gs://tactalk-bucket")
@@ -59,16 +65,18 @@ class RecordingPageFragment : AppCompatActivity() {
         var num = 1
 
         // test file name with hardcoded game_id
-        var fileName = "/game_60084b37e8c56c0978f5b004_"+num+"_0.wav"
-        var secondaryFileName = "/game_60084b37e8c56c0978f5b004_"+num+"_1.wav"
+        var fileName = "/game_60084b37e8c56c0978f5b004_"+num+"_0_f.wav"
+        var secondaryFileName = "/game_60084b37e8c56c0978f5b004_"+num+"_1_s.wav"
 
         // cache path & set up recorder
         var filePath: String = externalCacheDir?.absolutePath + fileName
+        var secondaryFilePath: String = externalCacheDir?.absolutePath + secondaryFileName
+
         var waveRecorder = WaveRecorder(filePath)
         waveRecorder.waveConfig.sampleRate = 32000
 
         //secondary WaveRecorder
-        var secondaryWaveRecorder = WaveRecorder(filePath)
+        var secondaryWaveRecorder = WaveRecorder(secondaryFilePath)
         secondaryWaveRecorder.waveConfig.sampleRate = 32000
 
         super.onCreate(savedInstanceState)
@@ -103,8 +111,9 @@ class RecordingPageFragment : AppCompatActivity() {
         // Stop the recorder at 15 seconds, upload the file from cache,
         // then start the recorder again
         recordingTimer.scheduleAtFixedRate(timerTask {
-            Log.d("Recorder", "Recording stopped")
+            Log.d("Recorder", "Recording stopped b")
             waveRecorder.stopRecording()
+            fRest = true;
 
             cloudUploader(filePath, fileName, storageRef)
 
@@ -113,19 +122,20 @@ class RecordingPageFragment : AppCompatActivity() {
             getScore()
 
             num++
-            fileName = "/game_60084b37e8c56c0978f5b004_"+num+"_"+baseSeconds+".wav"
+            fileName = "/game_60084b37e8c56c0978f5b004_"+num+"_"+baseSeconds+"_f.wav"
             filePath = externalCacheDir?.absolutePath + fileName
             waveRecorder = WaveRecorder(filePath)
             waveRecorder.waveConfig.sampleRate = 32000
-            baseSeconds += 15;
-        }, 30000, 15000)
+            baseSeconds += 14;
+        }, 14000, 24000)
 
         // start recorded once the activity is created
         recordingTimer.scheduleAtFixedRate(timerTask {
+            Log.d("Recorder", "Recording started a")
             waveRecorder.startRecording()
-            Log.d("Recorder", "Recording started")
-        }, 1, 15000)
+            fRest = false;
 
+        }, 1, 24000)
 
 
 
@@ -134,30 +144,39 @@ class RecordingPageFragment : AppCompatActivity() {
         secondaryRecordingTimer.scheduleAtFixedRate(timerTask {
                 //anything you want to start after 3s
 
-                Log.d("Recorder", "Recording stopped")
+                Log.d("Recorder", "Recording stopped d")
+
                 secondaryWaveRecorder.stopRecording()
+                sRest = true;
 
-
-                cloudUploader(filePath, secondaryFileName, storageRef)
+                cloudUploader(secondaryFilePath, secondaryFileName, storageRef)
 
                 deleteExternalStorage(secondaryFileName)
 
                 getScore()
 
                 num++
-                secondaryFileName = "/game_60084b37e8c56c0978f5b004_"+num+"_"+secondaryBaseSeconds+".wav"
-                filePath = externalCacheDir?.absolutePath + secondaryFileName
-                secondaryWaveRecorder = WaveRecorder(filePath)
+                secondaryFileName = "/game_60084b37e8c56c0978f5b004_"+num+"_"+secondaryBaseSeconds+"_s.wav"
+                secondaryFilePath = externalCacheDir?.absolutePath +secondaryFileName
+                secondaryWaveRecorder = WaveRecorder(secondaryFilePath)
                 secondaryWaveRecorder.waveConfig.sampleRate = 32000
-                secondaryBaseSeconds += 15;
-        }, 28001, 15000)
+                secondaryBaseSeconds += 14;
+        }, 26000, 24000)
 
-        secondaryRecordingTimer.scheduleAtFixedRate(timerTask {
-            secondaryWaveRecorder.startRecording()
-            Log.d("Recorder", "Recording started")
-        }, 13001, 15000)
+        try {
 
 
+            secondaryRecordingTimer.scheduleAtFixedRate(timerTask {
+                Log.d("Recorder", "Recording started c")
+                secondaryWaveRecorder.startRecording()
+                sRest = false;
+
+            }, 12001, 24000)
+
+        }catch(ex:Exception)
+        {
+            Log.d("Recorder", "ERROR:"+ex.toString());
+        }
 
 
         stopButton.setOnClickListener {
@@ -165,13 +184,24 @@ class RecordingPageFragment : AppCompatActivity() {
             recordingTimer.purge()
             secondaryRecordingTimer.cancel()
             secondaryRecordingTimer.purge()
-            waveRecorder.stopRecording()
-            secondaryWaveRecorder.stopRecording()
+            if (!fRest) {
+                waveRecorder.stopRecording()
+            }
+            if (!sRest) {
+                secondaryWaveRecorder.stopRecording()
+            }
             clock.stop()
 
-            cloudUploader(filePath, fileName, storageRef)
+            if (!fRest) {
+                cloudUploader(filePath, fileName, storageRef)
+            }
+            if (!sRest)
+            {
+                cloudUploader(secondaryFilePath, secondaryFileName, storageRef)
+            }
 
             deleteExternalStorage(fileName)
+            deleteExternalStorage(secondaryFileName)
 
             getScore()
 
